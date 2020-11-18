@@ -74,12 +74,6 @@ function aggregate() {
                 }
 
                 var input_cell = this_ss.getActiveSheet().getRange(start_row + i1, target_input_col);
-
-                // グレーアウトのセルは入力しない
-                if (!input_val && input_cell.getBackground() == '#434343') {
-                    continue;
-                }
-
                 input_cell.setValue(input_val);
             }
 
