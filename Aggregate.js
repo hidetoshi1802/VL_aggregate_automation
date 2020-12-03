@@ -154,6 +154,10 @@ function getResult(target_month, teacher_name, vlo_periods) {
     for (var i0 = 0; i0 < vlo_periods.length; i0++) {
         var sheet_name = vlo_periods[i0];
         var target_sheet = target_ss.getSheetByName(sheet_name);
+        if (!target_sheet) {
+            i0++
+            continue;
+        }
         var last_row = target_sheet.getLastRow();
         var last_column = target_sheet.getLastColumn();
         // 講師名の列{●講:列}
